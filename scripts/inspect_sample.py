@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-sample_file = Path("master_thesis_dataset/test/json/_fZbAxSSbX4_0-5-rgb_front/_fZbAxSSbX4_0-5-rgb_front_000000000000_keypoints.json")
+sample_file = Path("dataset/master_thesis_dataset/test/json/_fZbAxSSbX4_0-5-rgb_front/_fZbAxSSbX4_0-5-rgb_front_000000000000_keypoints.json")
 
 with open(sample_file, "r", encoding="utf-8") as f:
     data = json.load(f)
