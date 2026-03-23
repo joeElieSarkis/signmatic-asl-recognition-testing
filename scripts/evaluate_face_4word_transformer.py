@@ -7,9 +7,9 @@ from torch import nn
 # =========================
 # Paths
 # =========================
-BASE_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced\data")
-MODEL_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced\models\best_face_4w_balanced_transformer.pt")
-OUTPUT_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced")
+BASE_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced_normalized\data")
+MODEL_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced_normalized\models\best_face_4w_balanced_norm_transformer.pt")
+OUTPUT_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\face_4words_balanced_normalized")
 OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
 
 # =========================
@@ -113,7 +113,7 @@ def ids_to_sentence(token_ids, idx_to_word):
 # =========================
 # Load vocab
 # =========================
-with open(BASE_PATH / "vocab_face_4w_balanced.json", "r", encoding="utf-8") as f:
+with open(BASE_PATH / "vocab_face_4w_balanced_norm.json", "r", encoding="utf-8") as f:
     vocab = json.load(f)
 
 idx_to_word = {idx: word for word, idx in vocab.items()}
@@ -122,9 +122,9 @@ vocab_size = len(vocab)
 # =========================
 # Load balanced test set
 # =========================
-X_test = np.load(BASE_PATH / "X_test_face_4w_balanced.npy")
-y_test = load_labels(BASE_PATH / "y_test_face_4w_balanced.txt")
-clip_names = load_labels(BASE_PATH / "clip_names_test_face_4w_balanced.txt")
+X_test = np.load(BASE_PATH / "X_test_face_4w_balanced_norm.npy")
+y_test = load_labels(BASE_PATH / "y_test_face_4w_balanced_norm.txt")
+clip_names = load_labels(BASE_PATH / "clip_names_test_face_4w_balanced_norm.txt")
 
 print("Loaded test samples:", len(X_test))
 
@@ -196,7 +196,7 @@ for item in results[:10]:
 # =========================
 # Save all results
 # =========================
-results_file = OUTPUT_PATH / "evaluation_results_face_4w_balanced.txt"
+results_file = OUTPUT_PATH / "evaluation_results_face_4w_balanced_norm.txt"
 
 with open(results_file, "w", encoding="utf-8") as f:
     f.write(f"Exact Match Accuracy: {accuracy:.4f}\n")
