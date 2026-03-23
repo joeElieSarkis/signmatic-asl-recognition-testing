@@ -17,14 +17,14 @@ MODEL_OUTPUT.mkdir(parents=True, exist_ok=True)
 # =========================
 MAX_TOKENS = 6           # <=4 words + <sos> + <eos>
 BATCH_SIZE = 32
-EPOCHS = 20
+EPOCHS = 40
 LR = 1e-4
-D_MODEL = 128
-NUM_HEADS = 4
-NUM_ENCODER_LAYERS = 2
-NUM_DECODER_LAYERS = 2
-FF_DIM = 256
-DROPOUT = 0.3
+D_MODEL = 256
+NUM_HEADS = 8
+NUM_ENCODER_LAYERS = 3
+NUM_DECODER_LAYERS = 3
+FF_DIM = 512
+DROPOUT = 0.2
 INPUT_DIM = 411
 SEQ_LEN = 60
 PATIENCE = 3
