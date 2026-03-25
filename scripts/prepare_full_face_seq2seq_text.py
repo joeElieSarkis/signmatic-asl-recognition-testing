@@ -3,7 +3,7 @@ import json
 from collections import Counter
 
 BASE_PATH = Path(r"C:\Users\Joe\OneDrive\Desktop\signmatic_thesis\experiments\full_face_seq2seq\data")
-MIN_FREQ = 2
+MIN_FREQ = 3
 
 
 def load_labels(path):
